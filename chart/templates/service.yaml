@@ -10,9 +10,11 @@ spec:
     {{- include "pureftpd.selectorLabels" . | nindent 4 }}
   ports:
     - name: ftp
-      port: 21
+      port: {{ .Values.service.ports.ftp }}
       targetPort: 21
+      {{- if eq .Values.service.type "Node port" }}
       nodePort: {{ .Values.service.ports.ftp }}
+      {{- end }}
       protocol: TCP
     {{- $min := .Values.service.ports.passive.min }}
     {{- $max := .Values.service.ports.passive.max }}
