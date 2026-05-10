@@ -47,8 +47,8 @@ resources:
     cpu: 50m
     memory: 32Mi
   limits:
-    cpu: 200m
-    memory: 128Mi
+    cpu: 2
+    memory: 512Mi
 
 # NetworkPolicy — restrict FTP ingress to specific CIDRs.
 # Set enabled: true and add at least one CIDR, or leave ingressCidrs empty to allow all sources.
